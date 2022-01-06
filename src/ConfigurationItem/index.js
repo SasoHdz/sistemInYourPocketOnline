@@ -1,24 +1,24 @@
 import React from "react";
 
+import { FiArrowRightCircle } from "react-icons/fi";
+import { FiAlignJustify } from "react-icons/fi";
+import './ConfigurationsItem.css';
 
-function ConfigurationItem ()
+
+function ConfigurationItem (props)
 {
     return (
-        <div>
-            <label>
-                TipeConfiguration (Restaurant or Store)
-            </label>
-            <div>
-                <button>
-                    Iniciar
-                </button>
-                <p>
-                    NameConfiguration
-                </p>
+        <div className="Item">
+            <div className="Item-container">
+                <FiArrowRightCircle className="start"/>
+                <label>
+                    {props.type}
+                </label>
             </div>
-            <span>
-                =
-            </span>
+            <p>
+                {props.name}
+            </p>
+            <FiAlignJustify className="menu" />
         </div>
     );
 }
