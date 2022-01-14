@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { SystemProvider } from './SystemContext';
 import { Home } from './Home';
+
 
 function App() {
   return (
-    <Home />  
+    <SystemProvider>
+      <Home />  
+    </SystemProvider>
   );
 }
 

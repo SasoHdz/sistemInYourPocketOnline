@@ -1,5 +1,6 @@
 body {
-  background-color: #a517b1;
+  background: rgb(89,46,242);
+  background: linear-gradient(90deg, rgba(89,46,242,1) 17%, rgba(165,87,242,1) 68%);
   color: rgb(253, 255, 255);
   box-sizing: border-box;
   margin: 0;

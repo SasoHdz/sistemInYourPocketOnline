@@ -1,11 +1,11 @@
 .container-items {
     align-items: center;
-    background-color: rgb(221, 132, 243);
+    background-color: #7E49F2;
     border-radius: 15px;
     color: black;
     display: flex;
     margin: 0 auto;
-    height: 500px;
+    height: 484px;
     width: 85%;
     flex-direction: column;
     overflow-y: scroll;

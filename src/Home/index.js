@@ -1,31 +1,43 @@
 import React from "react";
+import  { SystemContext } from '../SystemContext';
+
 import { Header } from '../Header';
 import { ConfigurationItem } from '../ConfigurationItem';
 import { CreateNewConfiguration } from '../CreateNewConfiguration';
+import { Modal } from '../Modal';
+import { QuestionForm } from '../QuestionForm';
 
 import './Home.css';
 
-let items = [
-    {name:'JUJUCA', type: 'Restaurant'},
-    {name:'La Roca', type: 'Restaurant'},
-    {name:'El Mezquite', type: 'Restaurant'},
-    {name:'Katakana', type: 'Joyeria'},
-    {name:'Cositas', type: 'Comercio'},
-    {name:'La Terraza', type: 'Restaurant'},
-    {name:'Opalo de Fuego', type: 'Comercio'},
-    {name:'Artesanias', type: 'Comercio'},
-];
+function Home(props) {
+    const {
+            items,
+            openModal,
+            setOpenModal, 
+        } = React.useContext(SystemContext);
 
-function Home() {
+    console.log(items);
     return (
         <React.Fragment>
             <Header />
             <div className="container-items">
                 { items.map( item => (
-                    <ConfigurationItem name = {item.name} type={item.type}/>
+                    <ConfigurationItem 
+                        key = {item.name}
+                        name = {item.name} 
+                        type={item.type}
+                    />
                 ))}
             </div>
-            <CreateNewConfiguration />
+            { !!openModal && (
+                <Modal>
+                   <QuestionForm />
+                </Modal>
+            )}
+            <CreateNewConfiguration 
+                setOpenModal={setOpenModal}
+                openModal={openModal}
+            />
         </React.Fragment>
     );
 }

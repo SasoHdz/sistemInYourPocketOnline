@@ -1,10 +1,19 @@
 import React from 'react';
+import './CreateNewConfiguration.css';
 
-function CreateNewConfiguration() {
+function CreateNewConfiguration(props) {
+
+    const onClickCreateButton = () => {
+      props.setOpenModal(!props.openModal);
+      console.log(props.openModal);
+    }
+
     return (
-        <button>
-            +
-        </button>
+      <button className="createButton"
+        onClick={onClickCreateButton}
+      >
+        +
+      </button>
     );
 }
 
