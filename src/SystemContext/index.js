@@ -1,31 +1,16 @@
 import React from 'react'
+import { useLocalStorage } from '../useLocalStorage';
 
 const SystemContext = React.createContext();
 
 function SystemProvider(props) {
 
-    /* let items = [
-        {name:'JUJUCA', type: 'Restaurant'},
-        {name:'La Roca', type: 'Restaurant'},
-        {name:'El Mezquite', type: 'Restaurant'},
-        {name:'Katakana', type: 'Joyeria'},
-        {name:'Cositas', type: 'Comercio'},
-        {name:'La Terraza', type: 'Restaurant'},
-        {name:'Opalo de Fuego', type: 'Comercio'},
-        {name:'Artesanias', type: 'Comercio'},
-    ]; */
+    const {
+        item: items,
+        saveItem,
+        loading,
+    } = useLocalStorage('VERSION_V1',[]);
 
-    const localStorageConfig = localStorage.getItem('CONFIG_V1');
-    let parsedConfig;
-
-    if(!localStorageConfig){
-        localStorage.setItem('CONFIG_V1', JSON.stringify([]));
-        parsedConfig = [];
-    } else {
-        parsedConfig = JSON.parse(localStorageConfig);
-    } 
-
-    let items = parsedConfig;
 
     const [ openModal, setOpenModal] = React.useState(false);
 
