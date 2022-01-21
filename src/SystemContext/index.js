@@ -11,6 +11,8 @@ function SystemProvider(props) {
     } = useLocalStorage('VERSION_V1',[]);
 
     const [ openModal, setOpenModal] = React.useState(false);
+    const [ openQuestionConfirm , setOpenQuestionConfirm] = React.useState(false);
+    const [ configCurrent , setConfigCurrent ] = React.useState(' ');
 
     const addConfig = (nameConfig, typeConfig) => {
         const newConfigs = [...configs];
@@ -21,12 +23,24 @@ function SystemProvider(props) {
         saveItem(newConfigs);
     };
 
+    const deleteConfig = (nameConfig) => {
+        const newConfigs = [...configs];
+        const indexConfig = newConfigs.findIndex( item => item.name === nameConfig);
+        newConfigs.splice(indexConfig,1);
+        saveItem(newConfigs);
+    }
+
     return (
         <SystemContext.Provider value={{
             configs,
             openModal,
             setOpenModal,
-            addConfig
+            openQuestionConfirm,
+            setOpenQuestionConfirm,
+            configCurrent,
+            setConfigCurrent,
+            addConfig,
+            deleteConfig
         }}>
             {props.children}
         </SystemContext.Provider>

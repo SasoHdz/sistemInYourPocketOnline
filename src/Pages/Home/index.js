@@ -1,11 +1,14 @@
 import React from "react";
-import  { SystemContext } from '../SystemContext';
+import  { SystemContext } from '../../SystemContext';
 
-import { Header } from '../Header';
-import { ConfigurationItem } from '../ConfigurationItem';
-import { CreateNewConfiguration } from '../CreateNewConfiguration';
-import { Modal } from '../Modal';
-import { QuestionForm } from '../QuestionForm';
+import { Header } from '../../Components/Header';
+import { ConfigurationItem } from '../../Components/ConfigurationItem';
+import { CreateNewConfiguration } from '../../Components/CreateNewConfiguration';
+import { Modal } from '../../Components/Modal';
+import { QuestionForm } from '../../Components/QuestionForm';
+import { QuestionConfirm } from '../../Components/QuestionConfirm';
+
+
 
 import './Home.css';
 
@@ -13,7 +16,8 @@ function Home(props) {
     const {
             configs,
             openModal,
-            setOpenModal, 
+            setOpenModal,
+            openQuestionConfirm 
         } = React.useContext(SystemContext);
 
     return (
@@ -33,6 +37,12 @@ function Home(props) {
                    <QuestionForm />
                 </Modal>
             )}
+            { !!openQuestionConfirm && (
+                <Modal>
+                   <QuestionConfirm />
+                </Modal>
+            )}
+
             <CreateNewConfiguration 
                 setOpenModal={setOpenModal}
                 openModal={openModal}

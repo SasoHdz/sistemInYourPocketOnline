@@ -1,5 +1,5 @@
 import React from 'react';
-import { SystemContext } from '../SystemContext';
+import { SystemContext } from '../../SystemContext';
 
 import './QuestionForm.css';
 
@@ -54,14 +54,14 @@ function QuestionForm() {
             </select>
             <div className="containerButtons">
                 <button 
-                    className = "acepted"
+                    className="cancel"
                     type="button"
                     onClick={ onCancel }
                 >
                     Cancelar
                 </button>
                 <button 
-                    className="cancel"
+                    className = "acepted"
                     type="submit"
                 >
                     Aceptar

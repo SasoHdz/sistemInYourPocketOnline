@@ -1,0 +1,45 @@
+.Question-confirm{
+    width: 290px;
+    height: 215px;
+    background-color: rgb(228, 224, 224);
+    color: #7E49F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 10px 10px 56px 1px rgba(211,116,227,0.75);
+    -webkit-box-shadow: 10px 10px 56px 1px rgba(211,116,227,0.75);
+    -moz-box-shadow: 10px 10px 56px 1px rgba(211,116,227,0.75);
+}
+
+.Question-confirm label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.Question-confirm-buttons {
+    width: 260px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Question-confirm-buttons button {
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(216, 214, 214);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.acepted {
+    background-color: rgb(96, 12, 233);
+}
+
+.cancel {
+    background-color: rgb(245, 94, 94);
+}

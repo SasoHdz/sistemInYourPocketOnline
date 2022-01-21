@@ -1,0 +1,22 @@
+.Options-container {
+    width: 130px;
+    height: 100%;
+    background-color: rgb(206 206 206);
+    border-left: solid 10px #7E49F2;
+    color: #7E49F2;
+    position: absolute;
+    left: 50%;
+}
+
+.Options-container ul {
+    list-style-type: none;
+    font-size: 1rem;
+    font-weight: bolder;    
+    margin: 5px 0px 0px -30px;
+}
+
+.Options-container ul li:hover {
+    text-decoration: underline;
+}
+
+

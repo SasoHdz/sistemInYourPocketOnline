@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { SystemProvider } from './SystemContext';
-import { Home } from './Home';
+import { Home } from './Pages/Home';
 
 
 function App() {
