@@ -1,24 +1,32 @@
 import React from 'react'
-import { useLocalStorage } from '../useLocalStorage';
+import { useLocalStorage } from './useLocalStorage';
 
 const SystemContext = React.createContext();
 
 function SystemProvider(props) {
 
     const {
-        item: items,
+        item: configs,
         saveItem,
-        loading,
     } = useLocalStorage('VERSION_V1',[]);
-
 
     const [ openModal, setOpenModal] = React.useState(false);
 
+    const addConfig = (nameConfig, typeConfig) => {
+        const newConfigs = [...configs];
+        newConfigs.push({
+            name: nameConfig,
+            type: typeConfig
+        });
+        saveItem(newConfigs);
+    };
+
     return (
         <SystemContext.Provider value={{
-            items,
+            configs,
             openModal,
             setOpenModal,
+            addConfig
         }}>
             {props.children}
         </SystemContext.Provider>

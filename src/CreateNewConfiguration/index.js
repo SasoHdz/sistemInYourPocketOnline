@@ -5,7 +5,6 @@ function CreateNewConfiguration(props) {
 
     const onClickCreateButton = () => {
       props.setOpenModal(!props.openModal);
-      console.log(props.openModal);
     }
 
     return (

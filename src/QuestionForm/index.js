@@ -1,25 +1,30 @@
 import React from 'react';
+import { SystemContext } from '../SystemContext';
 
 import './QuestionForm.css';
 
 function QuestionForm() {
 
+    const {
+        addConfig,
+        setOpenModal,
+    }
+    = React.useContext(SystemContext);
     const [ newNameBusiness , setNewNameBusiness ] = React.useState('');
     const [ typeBusiness, setTypeBusiness ] =  React.useState('');
 
     const onChange = (event) => {
         setNewNameBusiness(event.target.value);
-        console.log(newNameBusiness);
     };
+
+    const onCancel = () => {
+        setOpenModal(false);
+    }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        const newConfiguration = {
-            name : newNameBusiness,
-            type : typeBusiness,
-        };
-        
-        console.log(newConfiguration);
+        addConfig(newNameBusiness, typeBusiness);
+        setOpenModal(false);
     }
 
     return(
@@ -40,7 +45,6 @@ function QuestionForm() {
                 onChange={(event)=>{
                     const selected = event.target.value;
                     setTypeBusiness(selected);
-                    console.log(selected);
                 }}
                 >
                 <option value=" " >Select Option</option>
@@ -52,6 +56,7 @@ function QuestionForm() {
                 <button 
                     className = "acepted"
                     type="button"
+                    onClick={ onCancel }
                 >
                     Cancelar
                 </button>

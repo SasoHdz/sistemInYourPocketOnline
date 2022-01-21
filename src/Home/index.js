@@ -11,17 +11,16 @@ import './Home.css';
 
 function Home(props) {
     const {
-            items,
+            configs,
             openModal,
             setOpenModal, 
         } = React.useContext(SystemContext);
 
-    console.log(items);
     return (
         <React.Fragment>
             <Header />
             <div className="container-items">
-                { items.map( item => (
+                { configs.map( item => (
                     <ConfigurationItem 
                         key = {item.name}
                         name = {item.name} 

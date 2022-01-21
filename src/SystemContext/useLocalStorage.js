@@ -23,7 +23,6 @@ function useLocalStorage(itemName, initialValue) {
                 }
         
                 setItem(parsedItem);
-                console.log(parsedItem);
                 setLoading(false);
 
         } catch (error) {
