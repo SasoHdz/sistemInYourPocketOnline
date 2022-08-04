@@ -1,22 +1,21 @@
 import React from 'react';
 
-const Home = () => {
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+
+const Home = ({text}) => {
   return (
-    <section className="w-full h-screen flex flex-col content-center">
-        <div className="w-full h-28 bg-slate-500">
-            <div className="w-full h-auto flex justify-around pt-5">
-                <p>SIYP</p>
-                <div className="w-28 h-20 bg-red-500">Logo</div>
-            </div>
-            <div className="absolute">Home</div>
+    <section className="w-full h-screen flex flex-col">
+        <Header title="Home"/>
+        <div className="w-11/12 h-3/5 mx-auto mt-5 flex flex-col">
+          <p className="text-base text-justify">{text}</p>
+          <div className="w-full h-3/4 mt-3 flex flex-col justify-around text-xl items-center">
+            <a href=""><button>Iniciar</button></a>
+            <a href=""><button>Configuración</button></a>
+            <a href=""><button>Historial</button></a> 
+          </div>
         </div>
-        <p>Lorem ipsumvfdsdfsdfsdfdsfsdfsdfsfr</p>
-        <a href=""><button>Iniciar</button></a>
-        <a href=""><button>Configuración</button></a>
-        <a href=""><button>Historial</button></a>
-        <div>
-            Footer
-        </div>
+        <Footer />
     </section>
   )
 }
