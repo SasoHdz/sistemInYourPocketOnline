@@ -7,7 +7,7 @@ const Header = ({title}) => {
             <p className="text-lg font-medium">SIYP</p>
             <div className="w-14 h-12 bg-red-500">Logo</div>
         </div>
-        <div className="text-lg font-medium rounded-md bg-blue-200 absolute top-12 left-5 mx-auto">
+        <div className="text-lg font-medium rounded-md bg-blue-200 absolute top-20 left-5 px-2">
             {title}
         </div>
     </div>
