@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const BtnSecondary = ({text}) => {
+const BtnSecondary = ({ text, Bwith, Bheigth, Btext }) => {
   return (
-    <button className="w-24 h-auto mt-2 rounded-md bg-red-700 text-slate-200 text-base font-medium">
-        {text}
+    <button
+      className={`
+      ${Bwith ? Bwith : "w-44"}
+      ${Bheigth ? Bheigth : "h-9"}
+      ${Btext ? Btext : "text-2xl"} 
+      mt-4 rounded-md bg-redCancel text-slate-200 font-medium shadow-btn`}
+    >
+      {text}
     </button>
-    )
-}
+  );
+};
 
-export {BtnSecondary};
+export { BtnSecondary };

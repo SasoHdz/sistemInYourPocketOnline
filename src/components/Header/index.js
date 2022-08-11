@@ -1,17 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const Header = ({title}) => {
+const Header = ({ title, section }) => {
   return (
-    <div className="w-full h-1/5 bg-slate-500 relative">
-        <div className="w-full h-auto flex items-center justify-around pt-2">
-            <p className="text-lg font-medium">SIYP</p>
-            <div className="w-14 h-12 bg-red-500">Logo</div>
-        </div>
-        <div className="text-lg font-medium rounded-md bg-blue-200 absolute top-20 left-5 px-2">
-            {title}
-        </div>
+    <div className="w-full h-28 bg-primary relative text-center">
+      <p className="text-3xl font-medium text-yellow-50 mt-7">
+        {title ? title : "SIYP"}
+      </p>
+      <div className="w-20 h-20 bg-yellow-50 rounded-full absolute top-0 right-0 mr-2 mt-3">
+        <div className="w-full h-full bg-logo bg-cover"></div>
+      </div>
+      <div className="w-fit text-2xl text-yellow-50 font-medium rounded-md bg-secondary mx-auto mt-8 px-3">
+        {section ? section : "Home"}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export {Header};
+export { Header };
