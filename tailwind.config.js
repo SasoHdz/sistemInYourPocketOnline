@@ -10,6 +10,7 @@ module.exports = {
         ...theme("colors"),
         primary: "#0C55CB",
         secondary: "#BABABC",
+        secondaryBg: "rgba(186, 186, 188, 0.49)",
         tertiary: "#8E99A2",
         quarter: "#434445",
         redCancel: "#CB0C0C",
